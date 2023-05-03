@@ -9,7 +9,9 @@ const PORT = 8000;
 dotenv.config();
 app.use(bodyParser.json({extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+	origin: 'https://mern-blond.vercel.app/'
+  }));
 
 app.use('/', Routes);
 const username = process.env.DB_USERNAME;
